@@ -1,0 +1,6 @@
+.devbox
+devbox.lock
+
+node_modules
+yarn.lock
+nconf.json
