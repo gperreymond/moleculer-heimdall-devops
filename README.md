@@ -14,3 +14,13 @@ devbox shell
 ```
 
 ## General purpose
+
+## Development
+
+```sh
+$ docker compose u -d
+$ APP_METADATA_NODENAME=pikachu yarn start:dev
+$ APP_METADATA_NODENAME=ronflex yarn start:dev
+```
+
+## Production
