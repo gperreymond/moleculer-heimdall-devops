@@ -1,7 +1,8 @@
-const { nodename, metadata, moleculer: { transporter, metrics } } = require('./application.config')
+const { nodename, metadata, moleculer: { transporter, metrics }, namespace } = require('./application.config')
 
 module.exports = {
   nodeID: nodename,
+  namespace,
   metadata,
   logger: true,
   transporter,

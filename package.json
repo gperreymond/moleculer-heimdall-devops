@@ -3,10 +3,21 @@
   "version": "1.0.0",
   "repository": "git@github.com:gperreymond/moleculer-heimdall-devops.git",
   "author": "Gilles Perreymond <gperreymond@gmail.com>",
+  "bin": "start.js",
+  "pkg": {
+    "targets": [ "node22-linux-x64" ],
+    "scripts": [
+      "application.config.js",
+      "moleculer.config.js",
+      "services/**/*.*"
+    ],
+    "outputPath": "dist"
+  },
   "scripts": {
     "standard": "standard",
     "test": "jest --coverage --verbose --detectOpenHandles --forceExit",
-    "start:dev": "moleculer-runner --repl --hot --config moleculer.config.js services"
+    "start:dev": "moleculer-runner --repl --hot --config moleculer.config.js services",
+    "bundle": "pkg ."
   },
   "dependencies": {
     "moleculer": "0.14.34",
@@ -14,6 +25,7 @@
     "nconf": "0.12.1"
   },
   "devDependencies": {
+    "@yao-pkg/pkg": "5.14.0",
     "jest": "29.7.0",
     "moleculer-repl": "0.7.4",
     "standard": "17.1.2"

@@ -30,6 +30,7 @@ if (!APP_METADATA_NODENAME) {
 
 module.exports = {
   nodename: APP_METADATA_NODENAME,
+  namespace: APP_ENVIRONMENT,
   environment: APP_ENVIRONMENT,
   metadata: {
     region: APP_METADATA_REGION,
