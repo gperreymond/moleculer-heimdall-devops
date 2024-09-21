@@ -1,5 +1,8 @@
+.vscode
 .devbox
 devbox.lock
+.venv
+.vagrant
 
 node_modules
 yarn.lock

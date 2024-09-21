@@ -3,15 +3,23 @@
   "packages": [
     "go-task@3.38.0",
     "nodejs@22.8.0",
-    "yarn@1.22.2"
+    "yarn@1.22.2",
+    "python@3.10.12"
   ],
   "shell": {
     "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
+      ". $VENV_DIR/bin/activate"
     ],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
+      "vagrant:ssh-clean": [
+        "ssh-keygen -R [127.0.0.1]:2201",
+        "ssh-keygen -R [127.0.0.1]:2202",
+        "ssh-keygen -R [127.0.0.1]:2203"
+      ],
+      "vagrant:ansible": [
+        "python3 -m pip install ansible==2.9",
+        "python3 -m pip install Jinja2==3.0",
+        "ansible-playbook -i ansible/inventories/inventory.ini ansible/playbook.yml"
       ]
     }
   }

@@ -1,0 +1,8 @@
+---
+
+- name: Provisionning
+  hosts: all
+  become: true
+  roles:
+    - packages
+    - docker
